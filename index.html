@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
   <title>Document</title>
 </head>
 
@@ -49,8 +50,8 @@
     <div class="header__body">
       <div class="container header__body-inner">
         <div class="header__body-content">
-          <a class="header__play" href="#">
-            <div class="header__play-icon"><img  src="images/icons/play-icon.svg" alt=""></div>
+          <a class="header__play" id="trigger" href="#">
+            <div class="header__play-icon"><img src="images/icons/play-icon.svg" alt=""></div>
             Play showreel
           </a>
           <h1 class="header__title">Enjoy studying
@@ -63,7 +64,7 @@
         <img src="images/hero-illustration.svg" alt="">
       </div>
     </div>
-    <section class="header__row">
+    <div class="header__row">
       <div class="container">
         <ul class="header__row-list">
           <li class="header__row-item">
@@ -87,8 +88,30 @@
           </li>
         </ul>
       </div>
-    </section>
+    </div>
   </header>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+<script>
+  document.getElementById("trigger").addEventListener("click", () => {
+    Fancybox.show(
+      [
+        {
+          src: "images/video.mp4",
+          width: 640,
+          height: 360,
+        },
+      ],
+      {
+        Carousel: {
+          Video: {
+            autoplay: true,
+          },
+        },
+      }
+    );
+  });
+</script>
 
 </html>
