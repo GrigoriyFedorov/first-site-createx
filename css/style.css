@@ -14,6 +14,19 @@ body {
   margin-inline: auto;
 }
 
+.main__about {
+  padding-top: 179px;
+  padding-bottom: 179px;
+}
+
+.main__statistic {
+  padding-bottom: 161px;
+}
+
+.main__directions {
+  padding-bottom: 148px;
+}
+
 .button {
   line-height: 325%;
   padding: 0px 40px;
@@ -275,8 +288,6 @@ body {
 /* about----------------------------------------------------------- */
 
 .about {
-  padding-top: 179px;
-  padding-bottom: 179px;
   color: #1e212c;
 }
 
@@ -328,10 +339,6 @@ body {
 
 /* statistic-------------------------------------------------------------------------- */
 
-.statistic {
-  padding-bottom: 161px;
-}
-
 .statistic__inner {
   display: flex;
   justify-content: space-between;
@@ -378,10 +385,6 @@ body {
 
 /* directions------------------------------------------------------------------------------------------ */
 
-.directions {
-  margin-bottom: 148px;
-}
-
 .directions__heading--center {
   margin-bottom: 90px;
   position: relative;
@@ -417,7 +420,11 @@ body {
 }
 
 .directions__nav input {
-  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .directions__nav-item {
@@ -429,6 +436,7 @@ body {
   line-height: 160%;
   color: #9a9ca5;
   white-space: nowrap;
+  /* user-select: none; */
 }
 
 .directions__nav input:checked+.directions__nav-item {
@@ -563,4 +571,142 @@ body {
 
 .directions__card:hover .directions__img {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* certificate-------------------------------------------------------------------------------------------------- */
+
+.main__certificate {
+  margin-bottom: -80px;
+}
+
+.certificate__inner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.certificate__inner::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url(../images/decor/4.svg);
+  top: -13px;
+  left: -202px;
+}
+
+.certificate__content {
+  max-width: 392px;
+  margin-right: 30px;
+}
+
+.certificate__heading {
+  margin-bottom: 48px;
+}
+
+.certificate__text {
+  font-weight: 400;
+  line-height: 160%;
+  color: #424551;
+  margin-bottom: 32px;
+}
+
+.certificate__organizations-icons {
+  display: flex;
+  gap: 40px;
+}
+
+.certificate__immmage {
+  box-shadow: 0 4px 4px -4px rgba(30, 33, 44, 0.05), 0 12px 10px -6px rgba(154, 156, 165, 0.08), 0 30px 24px -10px rgba(154, 156, 165, 0.1), 0 80px 80px -20px rgba(154, 156, 165, 0.16);
+}
+
+.certificate__immmage img {
+  border-radius: 4px;
+}
+
+/* ======================================================================= TEAM =================================================================== */
+
+.team {
+  background-color: #f4f5f6;
+  color: #424551;
+}
+
+.main__team {
+  padding-top: 166px;
+  padding-bottom: 180px;
+}
+
+.team__heading {
+  margin-bottom: 60px;
+}
+
+.team__slider {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team__socials {
+  display: none;
+}
+
+.team__image-box {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.team__image-box::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(180deg, rgba(30, 33, 44, 0) 43.9%, rgba(30, 33, 44, 0.03) 55.21%, rgba(30, 33, 44, 0.33) 68.73%, rgba(30, 33, 44, 0.56) 76.17%, rgba(30, 33, 44, 0.77) 83.75%, rgba(30, 33, 44, 0.92) 91.49%, #1e212c 100%);
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.team__slide:hover .team__image-box::after {
+  opacity: 1;
+}
+
+.team__socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.team__slide:hover .team__socials {
+  opacity: 1;
+}
+
+.team__socials-link:hover path {
+  transition: fill 0.3s;
+}
+
+.team__socials-link:hover path {
+  fill: #fff;
+}
+
+.team__info {
+  text-align: center;
+}
+
+.team__info-name {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.team__info-position {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #787a80;
 }
