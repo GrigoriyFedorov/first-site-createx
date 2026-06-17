@@ -195,7 +195,6 @@ body {
 .header__body-inner {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   color: #1e212c;
 }
 
@@ -385,29 +384,13 @@ body {
 
 /* directions------------------------------------------------------------------------------------------ */
 
+.directions {
+  background: url(../images/decor/directions-bg.svg) no-repeat 50% 20px;
+}
+
 .directions__heading--center {
   margin-bottom: 90px;
   position: relative;
-}
-
-.directions__heading--center::before {
-  content: "";
-  position: absolute;
-  width: 136px;
-  height: 115px;
-  background-image: url(../images/decor/2.svg);
-  top: 23px;
-  left: -208px;
-}
-
-.directions__heading--center::after {
-  content: "";
-  position: absolute;
-  width: 242px;
-  height: 242px;
-  background-image: url(../images/decor/3.svg);
-  top: 373px;
-  left: 1368px;
 }
 
 .directions__nav {
@@ -627,13 +610,12 @@ body {
 /* ======================================================================= TEAM =================================================================== */
 
 .team {
-  background-color: #f4f5f6;
+  background: url(../images/decor/team-bg.svg) #f4f5f6 no-repeat calc(50% + 140px) calc(50% + -120px);
   color: #424551;
 }
 
 .main__team {
   padding-top: 166px;
-  padding-bottom: 180px;
 }
 
 .team__heading {
@@ -709,4 +691,253 @@ body {
   font-size: 16px;
   line-height: 160%;
   color: #787a80;
+}
+
+/* ======================================================================= TESTIMONIALS ============================================================ */
+
+.testimonials {
+  background: url(../images/decor/testi-bg.svg) #f4f5f6 no-repeat calc(50% + 100px) calc(50% + 55px);
+}
+
+.main__testimonials {
+  padding-top: 180px;
+  padding-bottom: 255px;
+}
+
+.testimonials__heading {
+  margin-bottom: 60px;
+}
+
+.testimonials__container {
+  border-radius: 4px;
+  max-width: 1020px;
+  box-shadow: 0 4px 4px -4px rgba(30, 33, 44, 0.03), 0 12px 10px -6px rgba(154, 156, 165, 0.04), 0 30px 24px -10px rgba(154, 156, 165, 0.05), 0 80px 80px -20px rgba(154, 156, 165, 0.08);
+  background: #fff;
+  margin-inline: auto;
+  border: 1px solid transparent;
+  position: relative;
+  padding: 64px 105px;
+}
+
+.testimonials__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.testimonials__arrow::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #FF3F3A;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.testimonials__arrow svg path {
+  transition: fill 0.3s;
+}
+
+.testimonials__prev {
+  left: -101px;
+}
+
+.testimonials__next {
+  right: -81px;
+}
+
+.testimonials__prev:hover svg path,
+.testimonials__next:hover svg path {
+  fill: #fff;
+}
+
+.testimonials__arrow:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.testimonials__inner {
+  margin-inline: 30px;
+}
+
+.testimonials__box {
+  padding-left: 58px;
+}
+
+.testimonials__text {
+  font-weight: 400;
+  font-size: 20px;
+  color: #424551;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.testimonials__text::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/quote-icon.svg);
+  width: 28px;
+  height: 20px;
+  top: 0px;
+  left: -58px;
+}
+
+.testimonials__user-card {
+  display: flex;
+}
+
+.testimonials__avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.testimonials__user-info {
+  margin-block: auto;
+}
+
+.testimonials__user-name {
+  font-weight: 700;
+  line-height: 160%;
+  color: #1e212c;
+  margin-bottom: 4px;
+}
+
+.testimonials__user-position {
+  font-weight: 400;
+  font-size: 14px;
+  color: #787a80;
+}
+
+/* ---------------------------------------------------------- COMPANIES ----------------------------------------------------------------------------- */
+
+.companies {
+  background-color: #f4f5f6;
+}
+
+.companies__grid {
+  position: relative;
+}
+
+.companies__grid::before {
+  content: "";
+  background: url(../images/decor/5.svg);
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 217px;
+  left: -200px;
+}
+
+.main__companies {
+  padding-bottom: 177px;
+}
+
+.companies__heading {
+  margin-bottom: 60px;
+}
+
+.companies__grid {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(6, 1fr);
+  gap: 40px 102px;
+}
+
+.companies__grid-link {
+  display: block;
+}
+
+.companies__grid img {
+  filter: grayscale(1);
+  opacity: 0.4;
+  transition: all 1.3s;
+}
+
+.companies__grid-link:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+/* ------------------------------------------------------------ PROGRAMM --------------------------------------------------------------------------- */
+
+.main__programm {
+  padding-top: 116px;
+  padding-bottom: 186px;
+}
+
+.programm__heading {
+  margin-bottom: 60px;
+}
+
+.programm_inner {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: end; */
+}
+
+.programm__content {
+  max-width: 600px;
+  margin-right: 15px;
+}
+
+.programm__summary {
+  display: flex;
+  cursor: pointer;
+  padding-block: 12px;
+  padding-left: 40px;
+}
+
+.programm__lesson-number {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ff3f3a;
+  position: relative;
+}
+
+.programm__lesson-number::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/Plus.svg);
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s;
+}
+
+.programm__lesson[open] .programm__lesson-number::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.programm__lesson-name {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1e212c;
+}
+
+.programm__lesson-content {
+  padding: 4px 0 12px 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #424551;
+}
+
+.programm__lesson::details-content {
+  opacity: 0;
+  transition:
+    opacity 600ms,
+    content-visibility 600ms allow-discrete;
+}
+
+.programm__lesson[open]::details-content {
+  opacity: 1;
 }
