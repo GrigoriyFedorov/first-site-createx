@@ -108,8 +108,12 @@ body {
   line-height: 130%;
 }
 
+.card {
+  max-width: 390px;
+}
 
-/* ------------------------------------------------------------------------ */
+
+/* -------------------------------------------------------------------- HEADER ----------------------------------------------------------------------- */
 
 .header {
   font-weight: 700;
@@ -877,7 +881,7 @@ body {
 .programm_inner {
   display: flex;
   justify-content: space-between;
-  /* align-items: end; */
+  align-items: flex-start;
 }
 
 .programm__content {
@@ -940,4 +944,239 @@ body {
 
 .programm__lesson[open]::details-content {
   opacity: 1;
+}
+
+/* ----------------------------------------------------------------- BLOG --------------------------------------------------------------------------- */
+
+.main__blog {
+  margin-bottom: 213px;
+}
+
+.blog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.blog__heading {
+  margin-right: 30px;
+}
+
+.blog__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0px 30px 30px 10px rgba(101, 103, 109, 0.08);
+}
+
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.card__img-box {
+  border-radius: 4px;
+  margin-bottom: 16px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.blog__card--podcast .card__img-box::after {
+  content: "Podcast";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding-inline: 28px 8px;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #424551;
+  border-radius: 4px;
+}
+
+.blog__card--podcast .card__img-box::before {
+  content: "";
+  position: absolute;
+  background: url(../images/icons/podcast-icon.svg) center / contain no-repeat;
+  width: 12px;
+  height: 16px;
+  top: 14.5px;
+  left: 21px;
+  z-index: 1;
+}
+
+.blog__card--video .card__img-box::after {
+  content: "Video";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding-inline: 28px 8px;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #424551;
+  border-radius: 4px;
+}
+
+.blog__card--video .card__img-box::before {
+  content: "";
+  position: absolute;
+  background: url(../images/icons/play-mini-icon.svg) center / contain no-repeat;
+  width: 15px;
+  height: 15px;
+  top: 15px;
+  left:20px;
+  z-index: 1;
+}
+
+.blog__card--article .card__img-box::after {
+  content: "Article";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding-inline: 28px 8px;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #424551;
+  border-radius: 4px;
+}
+
+.blog__card--article .card__img-box::before {
+  content: "";
+  position: absolute;
+  background: url(../images/icons/article-icon.svg) center / contain no-repeat;
+  width: 12px;
+  height: 15px;
+  top: 15.5px;
+  left:21.5px;
+  z-index: 1;
+}
+
+.card__meta {
+  display: flex;
+  gap: 48px;
+  font-size: 14px;
+  color: #787a80;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.card__category {
+  font-weight: 700;
+}
+
+.card__time {
+  position: relative;
+}
+
+.card__time::before {
+  content: "";
+  position: absolute;
+  border: 1px solid #787a80;
+  width: 12px;
+  height: 0px;
+  left: -41px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  border-radius: 4px;
+}
+
+.card__time::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/calendar-icon.svg);
+  width: 15px;
+  height: 15px;
+  left: -23px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card__reading-time {
+  position: relative;
+}
+
+.card__reading-time::before {
+  content: "";
+  position: absolute;
+  border: 1px solid #787a80;
+  width: 12px;
+  height: 0px;
+  left: -41px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  border-radius: 4px;
+}
+
+.card__reading-time::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/clock-icon.svg);
+  width: 15px;
+  height: 15px;
+  left: -23px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1e212c;
+  margin-bottom: 8px;
+}
+
+.card__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #424551;
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.card__check {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #1e212c;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.card:hover .card__check {
+  color: #ff3f3a;
+}
+
+.card__check::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/arrow-right.svg);
+  width: 24px;
+  height: 24px;
+  right: -32px;
+  top: 50%;
+  transform: translateY(-50%);
 }
